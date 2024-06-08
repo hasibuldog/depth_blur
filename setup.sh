@@ -24,14 +24,14 @@ echo "Installing Python dependencies from requirements.txt..."
 pip install -r requirements.txt
 
 REPO_URL="https://github.com/xinntao/Real-ESRGAN.git"
-REPO_DIR="Real-ESRGAN"
-
-if [ ! -d "$REPO_DIR" ]; then
-    echo "Cloning Real-ESRGAN repository..."
-    git clone $REPO_URL
-else
-    echo "Real-ESRGAN repository already cloned."
+if ! command_exists git; then
+    echo "git is not installed. Please install git."
+    exit 1
 fi
+
+# Add the Real-ESRGAN submodule
+echo "Adding Real-ESRGAN submodule..."
+git submodule add https://github.com/xinntao/Real-ESRGAN.git Real-ESRGAN
 
 cd $REPO_DIR
 echo "Setting up Real-ESRGAN..."
