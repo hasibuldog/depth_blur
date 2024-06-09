@@ -11,7 +11,6 @@ jupyterlab_widgets==3.0.11
 notebook
 numpy==1.24.3
 oauthlib==3.2.2
-opencv-contrib-python==4.9.0.80
 pillow==  10.3.0
 safetensors==0.4.3
 scikit-image==0.21.0
@@ -27,6 +26,8 @@ torchvision==0.18.0
 tqdm==4.66.4
 transformers==4.40.2
 blurgenerator
+opencv-contrib-python==4.10.0.82
+gdown
 
 
 

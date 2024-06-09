@@ -20,10 +20,6 @@ if [ ! -f requirements.txt ]; then
     exit 1
 fi
 
-echo "Installing Python dependencies from requirements.txt..."
-pip install -r requirements.txt
-
-REPO_URL="https://github.com/xinntao/Real-ESRGAN.git"
 if ! command_exists git; then
     echo "git is not installed. Please install git."
     exit 1
@@ -33,10 +29,13 @@ fi
 echo "Adding Real-ESRGAN submodule..."
 git submodule add https://github.com/xinntao/Real-ESRGAN.git Real-ESRGAN
 
-cd $REPO_DIR
+cd Real-ESRGAN
 echo "Setting up Real-ESRGAN..."
 python setup.py develop
 
 cd ..
+
+echo "Installing Python dependencies from requirements.txt..."
+pip install -r requirements.txt
 
 echo "Setup complete."
