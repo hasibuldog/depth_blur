@@ -25,10 +25,6 @@ if ! command_exists git; then
     exit 1
 fi
 
-# Add the Real-ESRGAN submodule
-echo "Adding Real-ESRGAN submodule..."
-git submodule add https://github.com/xinntao/Real-ESRGAN.git Real-ESRGAN
-
 cd Real-ESRGAN
 echo "Setting up Real-ESRGAN..."
 python setup.py develop
