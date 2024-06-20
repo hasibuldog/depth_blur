@@ -25,11 +25,6 @@ if ! command_exists git; then
     exit 1
 fi
 
-cd Real-ESRGAN
-echo "Setting up Real-ESRGAN..."
-python setup.py develop
-
-cd ..
 
 echo "Installing Python dependencies from requirements.txt..."
 pip install -r requirements.txt
